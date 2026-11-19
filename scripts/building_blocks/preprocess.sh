@@ -11,8 +11,5 @@
 cd "$SLURM_SUBMIT_DIR"
 
 module load uv
-uv sync --extra spike_sorting
-
-echo "$EXPERIMENT_NAME"
 
 uv run scripts/building_blocks/preprocess.py --task_id "$SLURM_ARRAY_TASK_ID" --experiment_name "$EXPERIMENT_NAME"
