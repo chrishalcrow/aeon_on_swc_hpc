@@ -4,15 +4,15 @@
 
 This package is designed to make it easy to run `aeon_mecha` specifically on the Sainsbury Wellcome Centre's HPC.
 
-To run the full ephys pipeline there are one-off scripts you need to run. These can be found in aeon_mech and correspond to:
+To run the full ephys pipeline there are one-off scripts you need to run. These can be found in `aeon_mecha` and correspond to:
 
-A. Set up experiment, subject, lab room, and the probes used.
-B. Add probe configuraations / groups
-C. Add the sorting parameter set you want to use
+- Set up experiment, subject, lab room, and the probes used.
+- Add probe configurations / clumps
+- Add the sorting parameter set you want to use
 
 Once these are set up, this repo can be used to run the "daily" stuff. That is
 
-1. Ingest new ephys epoch's and the ephys chunks inside these
+1. Ingest new ephys epochs and the ephys chunks inside these
 2. Add time-blocks (e.g. 30 hour intervals we sort over) and sorting tasks (one task per probe-clump-paramset)
 3. Set the sorting tasks running
 
