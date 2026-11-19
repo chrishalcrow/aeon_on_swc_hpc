@@ -1,0 +1,22 @@
+[project]
+name = "aeon-on-swc-hpc"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "chrishalcrow", email = "chrishalcrow@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "aeon-mecha",
+]
+
+[project.scripts]
+aeon-on-swc-hpc = "aeon_on_swc_hpc:main"
+
+[build-system]
+requires = ["uv_build>=0.13.4,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+aeon-mecha = { git = "https://github.com/chrishalcrow/aeon_mecha.git", branch='chris-ar-core'}
