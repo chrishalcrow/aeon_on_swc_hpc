@@ -5,9 +5,8 @@
 #SBATCH --output=slurm_output/%x_%j.out
 #SBATCH --error=slurm_output/%x_%j.err 
 
-EXPORT_VARS="ALL,EXPERIMENT_NAME=$EXP_NAME"
-
 EXP_NAME="abcEphys02-aeon3"
+EXPORT_VARS="ALL,EXPERIMENT_NAME=$EXP_NAME"
 
 # Can be a comma seperated list of tasks, or task-ranges, e.g.
 # TASK_RANGE="1,5,28"
