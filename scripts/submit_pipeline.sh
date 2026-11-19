@@ -16,10 +16,10 @@ EXP_NAME="abcEphys02-aeon3"
 TASK_RANGE="0"
 
 # 1. Submit preprocessing
-JOB1=$(sbatch --parsable --export="$EXPORT_VARS" --array=$TASK_RANGE scripts/preprocess.sh)
+JOB1=$(sbatch --parsable --export="$EXPORT_VARS" --array=$TASK_RANGE scripts/building_blocks/preprocess.sh)
 
 # 2. Submit sorting, dependent on preprocessing
-JOB2=$(sbatch --parsable --export="$EXPORT_VARS" --array=$TASK_RANGE --dependency=aftercorr:$JOB1 scripts/spike_sort.sh)
+JOB2=$(sbatch --parsable --export="$EXPORT_VARS" --array=$TASK_RANGE --dependency=aftercorr:$JOB1 scripts/building_blocks/spike_sort.sh)
 
 # 3. Submit postprocessing, dependent on sorting
-JOB3=$(sbatch --parsable --export="$EXPORT_VARS" --array=$TASK_RANGE --dependency=aftercorr:$JOB2 scripts/postprocess.sh)
+JOB3=$(sbatch --parsable --export="$EXPORT_VARS" --array=$TASK_RANGE --dependency=aftercorr:$JOB2 scripts/building_blocks/postprocess.sh)
